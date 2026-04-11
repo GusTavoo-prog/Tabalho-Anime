@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Variáveis de Cores */
+:root {
+    --neon-red: #ff4655;
+    --bg-color: #0a0f1d;
+    --card-bg: #161b22;
+    --text-color: #ffffff;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body { 
+    background: var(--bg-color); 
+    color: var(--text-color); 
+    font-family: 'Poppins', sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* 1. Personagens Laterais MAIORES */
+.char-lateral { 
+    position: fixed; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 350px; /* Aumentei bastante aqui */
+    height: 85vh; /* Aumentei a altura */
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    z-index: -1; 
+    opacity: 0.4; 
+}
+
+.char-esquerda { 
+    left: 0; 
+    background-image: url('../personagem1.png'); 
+}
+
+.char-direita { 
+    right: 0; 
+    background-image: url('../personagem2.png'); 
+}
+
+/* 2. Container e Título Neon */
+.container-principal { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+    position: relative; 
+    z-index: 1; 
+}
+
+.titulo-neon {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 4rem; /* Maior e bem visível */
+    color: #fff;
+    text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px var(--neon-red),
+        0 0 40px var(--neon-red),
+        0 0 80px var(--neon-red);
+    margin-bottom: 10px;
+}
+
+.subtitulo { 
+    text-align: center; 
+    opacity: 0.7; 
+    margin-bottom: 40px; 
+    font-weight: 300; 
+    letter-spacing: 1px; 
+}
+
+/* 3. Busca e Sugestões */
+.secao-busca { 
+    background: var(--card-bg); 
+    padding: 25px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255,70,85,0.3); 
+    margin-bottom: 40px; 
+}
+
+#formBusca { 
+    display: flex; 
+    gap: 15px; 
+    position: relative; 
+}
+
+.wrapper-input { 
+    flex: 1; 
+    position: relative; 
+}
+
+input { 
+    width: 100%; 
+    padding: 22px; /* Input maior */
+    border-radius: 10px; 
+    border: 2px solid #333; 
+    background: #0d1117; 
+    color: #fff; 
+    font-size: 1.1rem; 
+    transition: 0.3s; 
+}
+
+input:focus { 
+    border-color: var(--neon-red); 
+    outline: none; 
+    box-shadow: 0 0 15px rgba(255,70,85,0.3); 
+}
+
+.dropdown-sugestoes { 
+    position: absolute; 
+    top: 100%; 
+    left: 0; 
+    width: 100%; 
+    background: var(--card-bg); 
+    border: 1px solid var(--neon-red); 
+    border-top: none; 
+    border-radius: 0 0 10px 10px; 
+    z-index: 100; 
+    max-height: 250px; 
+    overflow-y: auto; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
+}
+
+.sugestao-item { 
+    padding: 15px; 
+    cursor: pointer; 
+    border-bottom: 1px solid #333; 
+    transition: 0.2s; 
+}
+
+.sugestao-item:hover { 
+    background: var(--neon-red); 
+    font-weight: bold; 
+    padding-left: 25px; 
+}
+
+/* 4. Botões Estilizados e MAIORES */
+.btn-principal {
+    border-radius: 10px;
+    border: none;
+    background: var(--neon-red);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(255,70,85,0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-grande {
+    padding: 0 50px; /* Bem mais largo */
+    font-size: 1.3rem; /* Fonte maior */
+}
+
+.btn-principal:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 10px 25px rgba(255,70,85,0.6); 
+}
+
+/* 5. Top Animes */
+.secao-top-animes { 
+    margin-bottom: 50px; 
+}
+
+.carrossel-top { 
+    display: flex; 
+    gap: 20px; 
+    overflow-x: auto; 
+    padding-bottom: 15px; 
+}
+
+.card-top { 
+    min-width: 160px; 
+    background: var(--card-bg); 
+    border-radius: 10px; 
+    overflow: hidden; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    border: 1px solid #333; 
+    position: relative;
+}
+
+.card-top-nota {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.85);
+    color: #ffcc00;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid #ffcc00;
+    z-index: 2;
+}
+
+.card-top:hover { 
+    transform: translateY(-5px); 
+    border-color: var(--neon-red); 
+}
+
+.card-top img { 
+    width: 100%; 
+    height: 220px; 
+    object-fit: cover; 
+}
+
+.card-top p { 
+    padding: 10px; 
+    font-size: 0.9rem; 
+    font-weight: bold; 
+    text-align: center; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+/* 6. Card de Destaque (Pesquisa) */
+.card-destaque { 
+    display: flex; 
+    gap: 30px; 
+    background: var(--card-bg); 
+    padding: 30px; 
+    border-radius: 20px; 
+    border: 1px solid var(--neon-red); 
+    margin-bottom: 50px; 
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6); 
+}
+
+.card-destaque img { 
+    width: 250px; 
+    border-radius: 15px; 
+    object-fit: cover; 
+}
+
+.info-destaque { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.info-destaque h2 { 
+    font-family: 'Orbitron', sans-serif; 
+    color: var(--neon-red); 
+    font-size: 2.2rem; 
+    margin-bottom: 10px; 
+}
+
+.nota-badge { 
+    background: #000; 
+    color: #ffcc00; 
+    padding: 5px 10px; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    border: 1px solid #ffcc00; 
+    display: inline-block; 
+    margin-bottom: 20px; 
+}
+
+.sinopse-box { 
+    background: rgba(0,0,0,0.3); 
+    padding: 20px; 
+    border-radius: 10px; 
+    border-left: 4px solid var(--neon-red); 
+    margin-bottom: 20px; 
+    max-height: 250px; 
+    overflow-y: auto; 
+}
+
+.sinopse-box p { 
+    margin-bottom: 15px; 
+    line-height: 1.6; 
+    font-size: 0.95rem; 
+}
+
+.btn-traduzir { 
+    display: inline-block; 
+    background: transparent; 
+    border: 1px solid #fff; 
+    color: #fff; 
+    padding: 8px 15px; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    transition: 0.3s; 
+}
+
+.btn-traduzir:hover { 
+    background: #fff; 
+    color: #000; 
+}
+
+/* 7. Grid de Favoritos (Cards com animação de mexer) */
+.titulo-sessao { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 1.8rem; 
+    border-left: 6px solid var(--neon-red); 
+    padding-left: 15px; 
+    margin-bottom: 25px; 
+}
+
+.grid-cards { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 25px; 
+}
+
+.card-fav { 
+    background: var(--card-bg); 
+    border-radius: 15px; 
+    overflow: hidden; 
+    position: relative; 
+    border: 1px solid #333; 
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+    display: flex; 
+    flex-direction: column; 
+}
+
+/* Animação de mexer a caixa */
+.card-fav:hover { 
+    transform: translateY(-10px) rotate(2deg); 
+    border-color: var(--neon-red); 
+    box-shadow: 0 10px 20px rgba(255,70,85,0.2); 
+}
+
+.card-fav img { 
+    width: 100%; 
+    height: 300px; 
+    object-fit: cover; 
+    cursor: pointer; 
+}
+
+.card-fav-nota { 
+    position: absolute; 
+    top: 10px; 
+    right: 10px; 
+    background: rgba(0,0,0,0.8); 
+    color: #ffcc00; 
+    padding: 5px 10px; 
+    border-radius: 8px; 
+    font-weight: bold; 
+    border: 1px solid #ffcc00;
+}
+
+.card-fav-footer { 
+    padding: 15px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: rgba(0,0,0,0.6); 
+}
+
+.card-fav-nome { 
+    font-family: 'Orbitron', sans-serif; 
+    font-size: 1.1rem; 
+    color: #fff; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    max-width: 130px; 
+}
+
+.btn-lixeira { 
+    background: rgba(255,70,85,0.1); 
+    border: 1px solid rgba(255,70,85,0.3); 
+    color: var(--neon-red); 
+    padding: 10px 15px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.btn-lixeira:hover { 
+    background: var(--neon-red); 
+    color: #fff; 
+}
+
+/* 8. Modal da Anya (GRANDE E CENTRALIZADO) */
+.modal-overlay { 
+    display: none; 
+    position: fixed; 
+    inset: 0; 
+    background: rgba(0,0,0,0.9); 
+    z-index: 9999; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.modal-caixa { 
+    background: var(--card-bg); 
+    padding: 60px; 
+    border-radius: 25px; 
+    text-align: center; 
+    border: 3px solid var(--neon-red); 
+    max-width: 600px; 
+    box-shadow: 0 0 50px rgba(255,70,85,0.3); 
+}
+
+.img-anya { 
+    width: 250px; /* Anya bem grande */
+    border-radius: 20px; 
+    border: 5px solid var(--neon-red); 
+    margin-bottom: 30px; 
+}
+
+.modal-caixa h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+
+/* ============================================================
+   BOTÕES DO MODAL PARA CANCELAR NOS FAVORITOS
+   ============================================================ */
+
+/* 1. Alinhamento e espaço entre eles */
+.modal-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaço entre o botão branco e o vermelho */
+    margin-top: 10px;
+}
+
+/* 2. Base IGUAL para os dois botões (tamanho, fonte, borda) */
+#btnCancelar, #btnConfirmar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px; /* Define a altura e largura interna */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase; /* Deixa as letras maiúsculas */
+    border-radius: 12px; /* Cantos arredondados iguais */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 200px; /* Garante que os dois tenham a mesma largura */
+}
+
+/* 3. Estilo exclusivo do Botão Vermelho (Sim, tenho) */
+#btnConfirmar {
+    background-color: var(--neon-red);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 70, 85, 0.4); /* Brilho vermelho */
+}
+
+#btnConfirmar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 70, 85, 0.7);
+}
+
+/* 4. Estilo exclusivo do Botão Branco (Melhor não) */
+#btnCancelar {
+    background-color: #ffffff;
+    color: var(--bg-color); /* Letra escura (a cor do seu fundo) para dar leitura no branco */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Brilho branco suave */
+}
+
+#btnCancelar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.5);
+}
+.gif-anya{
+    width: 250px; /* Anya bem grande */
+    border-radius: 20px; 
+    border: 5px solid var(--neon-red); 
+    margin-bottom: 30px;
+}
+
+/* ============================================================
+   ESTILIZAÇÃO DA BARRA DE ROLAGEM (SCROLLBAR)
+   ============================================================ */
+
+/* 1. Para navegadores baseados em WebKit (Chrome, Edge, Safari, Opera) */
+
+/* Largura e altura da barra */
+::-webkit-scrollbar {
+    width: 10px;  /* Barra vertical */
+    height: 10px; /* Barra horizontal (como no carrossel de animes) */
+}
+
+/* O fundo da barra de rolagem (o "trilho") */
+::-webkit-scrollbar-track {
+    background: var(--bg-color); 
+    border-radius: 8px;
+}
+
+/* A barrinha que você clica e arrasta */
+::-webkit-scrollbar-thumb {
+    background: var(--neon-red); 
+    border-radius: 8px;
+    /* Adiciona uma bordinha escura para não colar nos cantos */
+    border: 2px solid var(--bg-color); 
+}
+
+/* Quando passa o mouse por cima da barrinha */
+::-webkit-scrollbar-thumb:hover {
+    background: #ff6b77; /* Um vermelho um pouquinho mais claro */
+    cursor: pointer;
+}
+
+/* 2. Para o Firefox (ele usa um padrão diferente, mais simples) */
+* {
+    scrollbar-width: thin; /* Deixa a barra mais fina */
+    scrollbar-color: var(--neon-red) var(--bg-color); /* cor-da-barra cor-do-fundo */
+}
+
+/* ============================================================
+   ESTILO DO BOTÃO DE ASSISTIR (CRUNCHYROLL)
+   ============================================================ */
+
+.btn-assistir {
+    background-color: #F47521; /* Laranja oficial da Crunchyroll */
+    border: none;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(244, 117, 33, 0.4); /* Brilho laranja sutil */
+    transition: all 0.3s ease;
+}
+
+.btn-assistir:hover {
+    background-color: #ff8c40; /* Laranja um pouco mais claro ao passar o mouse */
+    transform: translateY(-3px); /* Efeito de pular */
+    box-shadow: 0 8px 25px rgba(244, 117, 33, 0.7); /* Brilho mais forte */
+    color: #ffffff;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Explorer Premium</title> <link rel="icon" type="image/png" href="assets/favicon.jpg"stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilo/style.css">
+</head>
+<body>
+    <div class="char-lateral char-esquerda"></div>
+    <div class="char-lateral char-direita"></div>
+
+    <main class="container-principal">
+        <header>
+            <h1 class="titulo-neon">ANIME EXPLORER <span>⛩️</span></h1>
+            <p class="subtitulo">Sua central premium de informações de animes</p>
+        </header>
+
+        <section class="secao-busca">
+            <form id="formBusca" autocomplete="off">
+                <div class="wrapper-input">
+                    <input type="text" id="inputBusca" placeholder="Comece a digitar o nome do anime..." required>
+                    <div id="caixaSugestoes" class="dropdown-sugestoes"></div>
+                </div>
+                <button type="submit" class="btn-principal btn-grande">BUSCAR</button>
+            </form>
+        </section>
+
+        <section id="secaoTopAnimes" class="secao-top-animes">
+            <h2 class="titulo-sessao">EM ALTA 🔥</h2>
+            <div id="listaTopAnimes" class="carrossel-top">
+                <p style="opacity: 0.5;">Carregando os melhores animes...</p>
+            </div>
+        </section>
+
+        <section id="areaResultado"></section>
+
+        <section class="secao-lista">
+            <h2 class="titulo-sessao">MINHA LISTA DE FAVORITOS ★</h2>
+            <div id="listaFavoritos" class="grid-cards"></div>
+        </section>
+    </main>
+
+    <div id="modalAnya" class="modal-overlay">
+        <div class="modal-caixa">
+            <img src="assets/anya_não.gif" alt="Erro" class="img-anya">
+            <h2>Waku Waku... Opa!</h2>
+            <p>Não encontramos esse anime. Verifique o nome e tente novamente.</p>
+            <button onclick="fecharModal()" class="btn-principal btn-grande">FECHAR</button>
+        </div>
+    </div>
+
+    <div id="modalConfirmacao" class="modal-overlay">
+        <div class="modal-caixa modal-anya">
+            <div class="modal-img-anya">
+                <img src="assets/anya_chorando.gif"Anya Waku Waku" class="gif-anya">
+            </div>
+            
+            <h2>Tem Certeza?</h2>
+            
+            <p id="textoConfirmacao">Tem certeza que deseja remover o anime?</p>
+            
+            <div class="modal-botoes">
+                <button id="btnCancelar" class="btn-secundario">Melhor não.</button>
+                <button id="btnConfirmar" class="btn-principal">Sim, tenho.</button>
+            </div>
+        </div>
+    </div>  
+
+    <script src="js/script.js"></script>
+</body>
+</html>
