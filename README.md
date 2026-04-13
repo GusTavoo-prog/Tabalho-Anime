@@ -3,7 +3,7 @@
 **Instituição:** Fatec Itu - Faculdade de Tecnologia de Itu  
 **Curso:** Gestão da Tecnologia da Informação (GTI)  
 **Disciplina:** Programação para a Internet (Prof. Ms. Ricardo Leme)  
-
+**Alunos:** Ana Karolline dos Santos & Gustavo Almeida Barbosa
 ---
 
 ## 🎯 Sobre o Projeto
