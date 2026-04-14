@@ -3,7 +3,7 @@
 **Instituição:** Fatec Itu - Faculdade de Tecnologia de Itu  
 **Curso:** Gestão da Tecnologia da Informação (GTI)  
 **Disciplina:** Programação para a Internet (Prof. Ms. Ricardo Leme)  
-**Alunos:** Ana Karolline dos Santos & Gustavo Almeida Barbosa
+**Alunos:** Ana Karolline dos Santos, Gustavo Almeida Barbosa & Lucas Santos do Amaral
 ---
 
 ## 🎯 Sobre o Projeto
@@ -35,8 +35,3 @@ O projeto foi estruturado para cumprir todas as exigências do trabalho prático
 
 ---
 
-## 🚀 Como Executar o Projeto Localmente
-
-1. Faça o clone deste repositório:
-   ```bash
-   git clone [https://github.com/](https://github.com/)[seu-usuario]/[nome-do-repositorio].git
